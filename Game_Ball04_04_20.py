@@ -84,7 +84,7 @@ class Ball:
             # помечаем это в отдельной переменной
             self.hit_bottom = True
             # выводим сообщение и количество очков
-            canvas.create_text(250, 120, text='Вы проиграли', font=('Courier', 20), fill='red')
+            canvas.create_text(250, 120, text='Вы проиграли!', font=('Courier', 20), fill='red')
         # если было касание платформы
         if self.hit_paddle(pos) == True:
             # отправляем шарик наверх
@@ -104,7 +104,7 @@ class Ball:
 
 #  Описываем класс Paddle, который отвечает за платформы
 class Paddle:
-    # конструктор
+    # конструктор новый комментарий
     def __init__(self, canvas, color):
         # canvas означает, что платформа будет нарисована на нашем изначальном холсте
         self.canvas = canvas
