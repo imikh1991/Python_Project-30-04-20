@@ -10,7 +10,7 @@ import random
 # класса Tk() — он есть в графической библиотеке
 tk = Tk()
 # делаем заголовок окна — Games с помощью свойства объекта title
-tk.title('Game-BALL')
+tk.title('Arkanoid 2020')
 # запрещаем менять размеры окна, для этого используем свойство resizable
 tk.resizable(0, 0)
 # помещаем наше игровое окно выше остальных окон на компьютере, чтобы другие окна не могли его заслонить
@@ -84,7 +84,7 @@ class Ball:
             # помечаем это в отдельной переменной
             self.hit_bottom = True
             # выводим сообщение и количество очков
-            canvas.create_text(250, 120, text='Вы ПРОИГРАЛИ!!!', font=('Courier', 30), fill='red')
+            canvas.create_text(250, 120, text='Вы проиграли', font=('Courier', 20), fill='red')
         # если было касание платформы
         if self.hit_paddle(pos) == True:
             # отправляем шарик наверх
@@ -175,6 +175,7 @@ class Score:
         # будем использовать наш холст
         self.canvas = canvas
         # создаём надпись, которая показывает текущий счёт, делаем его нужно цвета и запоминаем внутреннее имя этой надписи
+
         self.id = canvas.create_text(450, 10, text=self.score, font=('Courier', 15), fill=color)
 
     # обрабатываем касание платформы
@@ -192,7 +193,7 @@ score = Score(canvas, 'green')
 # создаём объект — белую платформу
 paddle = Paddle(canvas, 'Grey')
 # создаём два объект —  шарики разных цветов
-ball = Ball(canvas, paddle, score, 'blue')
+ball = Ball(canvas, paddle, score, 'red')
 
 # пока шарик не коснулся дна
 while not ball.hit_bottom:
